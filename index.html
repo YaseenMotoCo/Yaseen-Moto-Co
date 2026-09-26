@@ -1,1 +1,800 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>Yaseen Moto Co.</title>
+
+<style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+body{
+  background:#050505;
+  color:white;
+  font-family:Arial,Helvetica,sans-serif;
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+/* NAVBAR */
+
+.navbar{
+  height:58px;
+  background:#070707;
+  border-bottom:1px solid #292929;
+  display:flex;
+  align-items:center;
+  padding:0 7%;
+}
+
+.logo{
+  width:190px;
+  font-size:21px;
+  font-weight:900;
+  font-style:italic;
+  letter-spacing:-1px;
+}
+
+.logo span{
+  display:block;
+  font-size:7px;
+  letter-spacing:4px;
+  text-align:center;
+  font-style:normal;
+}
+
+.navlinks{
+  display:flex;
+  gap:35px;
+  margin:auto;
+  height:100%;
+}
+
+.navlinks a{
+  display:flex;
+  align-items:center;
+  font-size:9px;
+  color:#aaa;
+}
+
+.navlinks a:first-child{
+  color:white;
+  border-bottom:2px solid white;
+}
+
+.icons{
+  display:flex;
+  gap:18px;
+  font-size:18px;
+}
+
+/* HERO */
+
+.hero{
+  height:300px;
+  position:relative;
+  overflow:hidden;
+  display:flex;
+  align-items:center;
+  padding-left:13%;
+  background:
+    linear-gradient(
+      90deg,
+      #000 0%,
+      rgba(0,0,0,.88) 30%,
+      rgba(0,0,0,.35) 75%,
+      rgba(0,0,0,.1)
+    ),
+    url("images/hero.jpg") center/cover;
+}
+
+.hero-text{
+  position:relative;
+  z-index:2;
+}
+
+.kicker{
+  font-size:9px;
+  letter-spacing:3px;
+  font-weight:bold;
+}
+
+.hero h1{
+  font-size:58px;
+  line-height:.82;
+  font-style:italic;
+  margin:14px 0 18px;
+  letter-spacing:-4px;
+}
+
+.hero p{
+  width:280px;
+  color:#ddd;
+  font-size:11px;
+  line-height:1.4;
+  margin-bottom:17px;
+}
+
+.shop{
+  display:inline-block;
+  background:white;
+  color:black;
+  padding:11px 21px;
+  font-size:9px;
+  font-weight:bold;
+}
+
+/* SECTIONS */
+
+.section{
+  padding:24px 6.7%;
+  border-bottom:1px solid #242424;
+}
+
+.section-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:end;
+  margin-bottom:12px;
+}
+
+.small-title{
+  font-size:8px;
+  letter-spacing:3px;
+  font-weight:bold;
+}
+
+.big-title{
+  font-size:26px;
+  font-weight:1000;
+  letter-spacing:-1px;
+  margin-top:3px;
+}
+
+.view{
+  font-size:8px;
+  letter-spacing:1px;
+}
+
+/* BIKE LINEUP */
+
+.bike-row{
+  display:flex;
+  flex-wrap:nowrap;
+  gap:12px;
+
+  /* keeps every bike in ONE horizontal row */
+  overflow-x:auto;
+
+  padding-bottom:8px;
+}
+
+.bike-row::-webkit-scrollbar{
+  height:4px;
+}
+
+.bike-row::-webkit-scrollbar-thumb{
+  background:#555;
+}
+
+.bike{
+  flex:0 0 calc((100% - 72px) / 7);
+  min-width:145px;
+
+  border:1px solid #303030;
+  background:#090909;
+
+  overflow:hidden;
+}
+
+.bike-image{
+  width:100%;
+  height:125px;
+  object-fit:cover;
+  display:block;
+  background:#111;
+}
+
+.bike-info{
+  padding:9px;
+}
+
+.bike-name{
+  font-size:10px;
+  font-weight:900;
+  margin-bottom:4px;
+}
+
+.description{
+  color:#999;
+  font-size:7px;
+  white-space:nowrap;
+  overflow:hidden;
+}
+
+.details{
+  font-size:7px;
+  font-weight:bold;
+  margin-top:10px;
+}
+
+/* PARTS */
+
+.parts-row{
+  display:flex;
+  gap:11px;
+  overflow-x:auto;
+}
+
+.part{
+  flex:1 0 16%;
+  min-width:150px;
+  height:120px;
+
+  border:1px solid #303030;
+
+  padding:12px;
+
+  background:
+    linear-gradient(145deg,#151515,#050505);
+}
+
+.part h3{
+  margin-top:67px;
+  font-size:10px;
+}
+
+.part p{
+  color:#aaa;
+  font-size:8px;
+  margin-top:5px;
+}
+
+/* ABOUT */
+
+.about{
+  min-height:150px;
+
+  display:grid;
+  grid-template-columns:1.5fr 1fr;
+
+  gap:50px;
+
+  padding:25px 7%;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0,0,0,.9),
+      rgba(0,0,0,.5)
+    ),
+    url("images/hero.jpg") center/cover;
+}
+
+.about h2{
+  font-size:25px;
+  line-height:.9;
+  margin:6px 0 10px;
+}
+
+.about p{
+  max-width:470px;
+  font-size:9px;
+  color:#ccc;
+  line-height:1.5;
+}
+
+.perks{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  gap:15px;
+}
+
+.perk{
+  font-size:9px;
+}
+
+.perk span{
+  display:block;
+  color:#888;
+  margin-top:3px;
+  font-size:7px;
+}
+
+/* FOOTER */
+
+footer{
+  height:60px;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  padding:0 7%;
+
+  border-top:1px solid #292929;
+
+  font-size:7px;
+  color:#aaa;
+}
+
+.footer-links{
+  display:flex;
+  gap:25px;
+  color:#ddd;
+}
+
+/* PHONE */
+
+@media(max-width:700px){
+
+  .navlinks{
+    display:none;
+  }
+
+  .navbar{
+    padding:0 5%;
+  }
+
+  .hero{
+    height:330px;
+    padding-left:7%;
+  }
+
+  .hero h1{
+    font-size:50px;
+  }
+
+  .bike{
+    flex:0 0 190px;
+  }
+
+  .bike-image{
+    height:135px;
+  }
+
+  .about{
+    grid-template-columns:1fr;
+  }
+
+  .perks{
+    display:none;
+  }
+
+  .footer-links{
+    display:none;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+
+<header class="navbar">
+
+  <div class="logo">
+    YASEEN
+    <span>MOTO CO.</span>
+  </div>
+
+  <nav class="navlinks">
+    <a href="#">HOME</a>
+    <a href="#bikes">BIKES</a>
+    <a href="#parts">PARTS</a>
+    <a href="#">ACCESSORIES</a>
+    <a href="#about">ABOUT</a>
+  </nav>
+
+  <div class="icons">
+    ⌕
+    ♙
+    🛒
+  </div>
+
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+  <div class="hero-text">
+
+    <div class="kicker">
+      E-MOTO PARTS / BUILDS / ACCESSORIES
+    </div>
+
+    <h1>
+      RIDE<br>
+      DIFFERENT.
+    </h1>
+
+    <p>
+      Premium e-moto parts, custom builds and
+      accessories for riders who want their bike
+      to stand out.
+    </p>
+
+    <a class="shop" href="#parts">
+      SHOP NOW →
+    </a>
+
+  </div>
+
+</section>
+
+
+<!-- BIKE LINEUP -->
+
+<section class="section" id="bikes">
+
+  <div class="section-top">
+
+    <div>
+      <div class="small-title">
+        OUR BIKES
+      </div>
+
+      <div class="big-title">
+        E-MOTO LINEUP
+      </div>
+    </div>
+
+    <div class="view">
+      VIEW ALL BIKES →
+    </div>
+
+  </div>
+
+
+  <div class="bike-row">
+
+    <!-- BIKE 1 -->
+
+    <div class="bike">
+
+      <img
+        class="bike-image"
+        src="images/talaria-x3.png"
+        alt="Talaria X3"
+      >
+
+      <div class="bike-info">
+
+        <div class="bike-name">
+          TALARIA X3
+        </div>
+
+        <div class="description">
+          Lightweight. Powerful. Customizable.
+        </div>
+
+        <div class="details">
+          VIEW DETAILS →
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- BIKE 2 -->
+
+    <div class="bike">
+
+      <img
+        class="bike-image"
+        src="images/eride-pro.png"
+        alt="E Ride Pro"
+      >
+
+      <div class="bike-info">
+
+        <div class="bike-name">
+          E RIDE PRO
+        </div>
+
+        <div class="description">
+          More power. More possibilities.
+        </div>
+
+        <div class="details">
+          VIEW DETAILS →
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- BIKE 3 -->
+
+    <div class="bike">
+
+      <img
+        class="bike-image"
+        src="images/yozma.png"
+        alt="Yozma"
+      >
+
+      <div class="bike-info">
+
+        <div class="bike-name">
+          YOZMA
+        </div>
+
+        <div class="description">
+          Built for the next generation.
+        </div>
+
+        <div class="details">
+          VIEW DETAILS →
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- BIKE 4 -->
+
+    <div class="bike">
+
+      <img
+        class="bike-image"
+        src="images/ultra-bee.png"
+        alt="Ultra Bee"
+      >
+
+      <div class="bike-info">
+
+        <div class="bike-name">
+          ULTRA BEE
+        </div>
+
+        <div class="description">
+          Big power. Bigger adventures.
+        </div>
+
+        <div class="details">
+          VIEW DETAILS →
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- BIKE 5 -->
+
+    <div class="bike">
+
+      <img
+        class="bike-image"
+        src="images/surron.png"
+        alt="Surron"
+      >
+
+      <div class="bike-info">
+
+        <div class="bike-name">
+          SURRON
+        </div>
+
+        <div class="description">
+          The classic. Still the best.
+        </div>
+
+        <div class="details">
+          VIEW DETAILS →
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- BIKE 6 -->
+
+    <div class="bike">
+
+      <img
+        class="bike-image"
+        src="images/talaria-sting.png"
+        alt="Talaria Sting"
+      >
+
+      <div class="bike-info">
+
+        <div class="bike-name">
+          TALARIA STING
+        </div>
+
+        <div class="description">
+          Simple. Fast. Reliable.
+        </div>
+
+        <div class="details">
+          VIEW DETAILS →
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- BIKE 7 -->
+
+    <div class="bike">
+
+      <img
+        class="bike-image"
+        src="images/tuttio.png"
+        alt="Tuttio Soleil01"
+      >
+
+      <div class="bike-info">
+
+        <div class="bike-name">
+          TUTTIO SOLEIL01
+        </div>
+
+        <div class="description">
+          Compact. Electric.
+        </div>
+
+        <div class="details">
+          VIEW DETAILS →
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- PARTS -->
+
+<section class="section" id="parts">
+
+  <div class="section-top">
+
+    <div>
+      <div class="small-title">
+        SHOP PARTS & ACCESSORIES
+      </div>
+
+      <div class="big-title">
+        UPGRADE YOUR RIDE
+      </div>
+    </div>
+
+    <div class="view">
+      VIEW ALL PARTS →
+    </div>
+
+  </div>
+
+
+  <div class="parts-row">
+
+    <div class="part">
+      <h3>Vented Motor Plate</h3>
+      <p>$49.99</p>
+    </div>
+
+    <div class="part">
+      <h3>Custom Number Plate</h3>
+      <p>$29.99</p>
+    </div>
+
+    <div class="part">
+      <h3>Bar Pad</h3>
+      <p>$24.99</p>
+    </div>
+
+    <div class="part">
+      <h3>Graphic Kit</h3>
+      <p>$89.99</p>
+    </div>
+
+    <div class="part">
+      <h3>Sticker Pack</h3>
+      <p>$14.99</p>
+    </div>
+
+    <div class="part">
+      <h3>More Parts</h3>
+      <p>COMING SOON</p>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section class="about" id="about">
+
+  <div>
+
+    <div class="small-title">
+      ABOUT YASEEN MOTO CO.
+    </div>
+
+    <h2>
+      BUILT BY RIDERS,<br>
+      FOR RIDERS.
+    </h2>
+
+    <p>
+      Yaseen Moto Co. is an e-moto parts and
+      accessories brand focused on custom styling,
+      upgrades and unique builds.
+    </p>
+
+  </div>
+
+
+  <div class="perks">
+
+    <div class="perk">
+      🚚 FAST SHIPPING
+      <span>To the US & beyond</span>
+    </div>
+
+    <div class="perk">
+      ◇ SECURE CHECKOUT
+      <span>Shop with confidence</span>
+    </div>
+
+    <div class="perk">
+      ♧ CUSTOMER SUPPORT
+      <span>We're here to help</span>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+  <div class="logo">
+    YASEEN
+    <span>MOTO CO.</span>
+  </div>
+
+  <div class="footer-links">
+    <a href="#">HOME</a>
+    <a href="#bikes">BIKES</a>
+    <a href="#parts">PARTS</a>
+    <a href="#">ACCESSORIES</a>
+    <a href="#about">ABOUT</a>
+  </div>
+
+  <div>
+    © 2026 Yaseen Moto Co. — Ride Different.
+  </div>
+
+</footer>
+
+</body>
+</html>
